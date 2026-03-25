@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Characters as Memory: Script, Politics, and the Diaspora Archive</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f5f0e8;
+      --red: #8b1a1a;
+      --gold: #c8a84b;
+      --fade: #6b6b6b;
+      --rule: #d4c9b0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--paper);
+      color: var(--ink);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      line-height: 1.8;
+    }
+
+    header {
+      border-bottom: 3px double var(--rule);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .chinese-header {
+      font-size: 3.5rem;
+      letter-spacing: 0.3em;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .chinese-sub {
+      font-size: 1.4rem;
+      color: var(--fade);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: normal;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: var(--fade);
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      color: var(--red);
+      margin: 2.5rem 0 1rem;
+      text-transform: uppercase;
+      border-left: 3px solid var(--gold);
+      padding-left: 0.8rem;
+    }
+
+    p { margin-bottom: 1.2rem; }
+
+    .character-pair {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
+      padding: 1.2rem 1.5rem;
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+    }
+
+    .char-block {
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .char-glyph {
+      font-size: 3rem;
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .char-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fade);
+    }
+
+    .char-arrow {
+      font-size: 2rem;
+      color: var(--rule);
+      padding-top: 0.5rem;
+      align-self: center;
+    }
+
+    .char-note {
+      font-size: 0.9rem;
+      color: var(--fade);
+      flex: 1;
+      padding-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .char-note strong { color: var(--ink); font-style: normal; }
+
+    .callout {
+      border-left: 4px solid var(--red);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem 0;
+      background: white;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .callout cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--fade);
+      font-style: normal;
+    }
+
+    .timeline {
+      list-style: none;
+      border-left: 2px solid var(--rule);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .timeline li {
+      position: relative;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -1.65rem;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .timeline .year {
+      font-weight: bold;
+      color: var(--red);
+      margin-right: 0.5rem;
+    }
+
+    .section-divider {
+      text-align: center;
+      color: var(--rule);
+      font-size: 1.5rem;
+      margin: 2.5rem 0;
+      letter-spacing: 0.5em;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .col-box {
+      padding: 1rem 1.2rem;
+      background: white;
+      border: 1px solid var(--rule);
+      font-size: 0.9rem;
+    }
+
+    .col-box h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fade);
+      margin-bottom: 0.7rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.4rem;
+    }
+
+    .col-box ul {
+      padding-left: 1.2rem;
+      color: var(--ink);
+    }
+
+    .col-box li { margin-bottom: 0.4rem; }
+
+    .source-list {
+      font-size: 0.82rem;
+      color: var(--fade);
+      padding-left: 1.2rem;
+    }
+
+    .source-list li { margin-bottom: 0.4rem; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.8rem;
+      color: var(--fade);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .two-col { grid-template-columns: 1fr; }
+      .character-pair { flex-direction: column; }
+      .chinese-header { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="chinese-header">記憶 → 记忆</div>
+  <div class="chinese-sub">jì yì — memory / to remember</div>
+  <h1>Characters as Memory</h1>
+  <p class="subtitle">Script reform, diaspora preservation, and the limits of Western cataloging</p>
+</header>
+
+<!-- SECTION 1 -->
+<h2>I. The Script as Political Act</h2>
+
+<p>In 1956, the newly established People's Republic of China promulgated the <em>Scheme of Simplified Chinese Characters</em> — standardizing 515 simplified forms, affecting thousands of compound characters. This was not a neutral act of modernization. It was ideology made legible, literacy weaponized for socialist consolidation.</p>
+
+<p>The groundwork had been laid decades earlier: the May Fourth Movement (1919) had already framed classical Chinese script as a barrier to modernity; the Kuomintang attempted their own simplification list in 1935 (324 characters, ultimately withdrawn). But the PRC reform of 1956–1964 carried the weight of a state apparatus behind it. By 1977, a <em>second round</em> — proposing 248 additional simplified characters — was floated and then rescinded in 1986 after public backlash. The first round calcified as permanent.</p>
+
+<p>Premier Zhou Enlai's 1958 speech drew the line: no Romanization, no alphabetization. Simplification was the compromise between radical script abolition (which many reformers had championed) and the preservation of the character-based writing system. The <em>form</em> would change; the <em>system</em> would survive.</p>
+
+<ul class="timeline">
+  <li><span class="year">1909</span> Lufei Kui (陆费逵) proposes simplified forms for schools — earliest modern proposal</li>
+  <li><span class="year">1919</span> May Fourth Movement frames complex characters as obstacle to literacy and national progress</li>
+  <li><span class="year">1935</span> Kuomintang publishes 324-character simplification list; withdrawn within a year</li>
+  <li><span class="year">1949</span> PRC established; script reform becomes national priority</li>
+  <li><span class="year">1956</span> First-round Scheme of Simplified Characters: 515 characters, 54 components</li>
+  <li><span class="year">1964</span> Consolidated list published; printing standards locked</li>
+  <li><span class="year">1977</span> Second-round proposal floated: 248 new simplifications, 4,500+ affected</li>
+  <li><span class="year">1986</span> Second round rescinded after backlash; first-round forms declared permanent</li>
+  <li><span class="year">1997</span> Hong Kong handover: traditional characters remain in everyday use but mainland policy pressure grows</li>
+</ul>
+
+<div class="callout">
+  "Taiwan, Hong Kong, and Macau retained traditional characters, preserving etymological and aesthetic depth — but at the cost of cross-strait readability. This divide symbolizes political separation, with simplified characters embodying mainland ideology and traditional ones linked to Republican-era identity."
+  <cite>— Wikipedia, "Simplified Chinese characters"</cite>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section-divider">愛 → 爱</div>
+
+<h2>II. What the Stroke Removed</h2>
+
+<p>Simplification was not just about reducing stroke count. It altered the internal logic of characters — the visual reasoning that allowed a reader to intuit meaning from component parts. Traditional Chinese characters operate as a <em>semantic network</em>: radicals (部首, bù shǒu) encode meaning categories; their position within a character signals relationship, not just phonetics.</p>
+
+<p>When a radical is removed or replaced, the cultural logic encoded in the character is severed. The simplified form may still communicate the same word — but it no longer <em>shows</em> why.</p>
+
+<div class="character-pair">
+  <div class="char-block">
+    <span class="char-glyph">愛</span>
+    <span class="char-label">Traditional</span>
+  </div>
+  <div class="char-arrow">→</div>
+  <div class="char-block">
+    <span class="char-glyph">爱</span>
+    <span class="char-label">Simplified</span>
+  </div>
+  <div class="char-note">
+    <strong>ài (love)</strong> — The traditional form contains 心 (xīn, heart) at its center. The simplified form removes it entirely. To love, in the simplified script, is a word with no heart inside it.
+  </div>
+</div>
+
+<div class="character-pair">
+  <div class="char-block">
+    <span class="char-glyph">親</span>
+    <span class="char-label">Traditional</span>
+  </div>
+  <div class="char-arrow">→</div>
+  <div class="char-block">
+    <span class="char-glyph">亲</span>
+    <span class="char-label">Simplified</span>
+  </div>
+  <div class="char-note">
+    <strong>qīn (kin / to be close to)</strong> — Traditional form contains 見 (jiàn, to see/meet). The simplified form removes the act of seeing. Kinship without vision; closeness without encounter.
+  </div>
+</div>
+
+<div class="character-pair">
+  <div class="char-block">
+    <span class="char-glyph">聽</span>
+    <span class="char-label">Traditional</span>
+  </div>
+  <div class="char-arrow">→</div>
+  <div class="char-block">
+    <span class="char-glyph">听</span>
+    <span class="char-label">Simplified</span>
+  </div>
+  <div class="char-note">
+    <strong>tīng (to listen)</strong> — The traditional form encodes 耳 (ear), 王 (king), 心 (heart), and 目 (eye) — listening as a full-body, royal, attentive act. The simplified form retains only the phonetic shell.
+  </div>
+</div>
+
+<p>The 214 Kangxi radicals of the traditional system are reduced to 189 in the simplified. This is not merely aesthetic loss — it is a reduction in the visual epistemology that the writing system carried. Learners of simplified Chinese encounter a script that functions, but does not narrate its own etymology.</p>
+
+<!-- SECTION 3 -->
+<h2>III. The Diaspora as Living Archive</h2>
+
+<p>The split between simplified and traditional is not only geographic — it is temporal. Communities that emigrated before 1956, or that maintain cultural and political connections to Taiwan and Hong Kong, continue to use traditional characters as a daily practice. The script is not merely a writing system; it is a stance.</p>
+
+<p>Chinatown newspapers across North America — from San Francisco's <em>Chung Sai Yat Po</em> (中西日報, est. 1900) to Vancouver's <em>Chinatown News</em> (1953–1966) to the continent-wide <em>World Journal</em> (美洲世界日報) — were and are printed in traditional characters. These publications constitute a parallel archive: community life, political commentary, obituaries, and advertisements, all in a script that the mainland had declared obsolete.</p>
+
+<p>For Cantonese-speaking communities especially — the dominant wave of 19th and early 20th century Chinese immigration to the US — traditional characters are embedded in everyday reading practice, temple signage, merchant storefronts, and family records. The script and the dialect are intertwined: Cantonese written forms exist almost exclusively in traditional script, with no meaningful simplified parallel.</p>
+
+<div class="two-col">
+  <div class="col-box">
+    <h3>Traditional characters in active diaspora use</h3>
+    <ul>
+      <li>Chinatown storefronts, temples, associations</li>
+      <li>Overseas Chinese newspapers (World Journal, Sing Tao Daily)</li>
+      <li>Cantonese-language community media</li>
+      <li>Taiwan-connected educational institutions</li>
+      <li>Family correspondence and genealogical records</li>
+      <li>Classical literary and religious texts</li>
+    </ul>
+  </div>
+  <div class="col-box">
+    <h3>Key diaspora archival collections (US)</h3>
+    <ul>
+      <li><em>Chung Sai Yat Po</em> (UC Berkeley)</li>
+      <li>Chinese Historical Society of America (SF)</li>
+      <li>University of Toronto: East Asian Library Chinese newspapers</li>
+      <li>Library of Congress: 650,000+ volumes, 1,200+ newspapers</li>
+      <li>Columbia Starr East Asian Library</li>
+      <li>Princeton: Taiwan newspapers (traditional), incl. Lianhebao from 1951</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section-divider">目錄 → 目录</div>
+
+<h2>IV. The Cataloging Problem</h2>
+
+<p>US academic libraries catalog Chinese-language materials using MARC 21 records, OCLC WorldCat, and systems like Columbia's CLIO or Yale's Orbis. The dominant standard for romanization is <strong>Library of Congress Pinyin</strong> — a transliteration scheme based on Mandarin pronunciation, derived from mainland PRC conventions.</p>
+
+<p>This creates structural erasure at several levels:</p>
+
+<p><strong>1. The romanization problem.</strong> Library of Congress Pinyin prioritizes Mandarin phonology. A Cantonese-language publication, cataloged in Pinyin, is effectively stripped of its linguistic identity. A researcher looking for Cantonese-language materials cannot search by the phonology they know. Jyutping romanization (the standard for Cantonese) is nowhere in the authority files.</p>
+
+<p><strong>2. The script disambiguation problem.</strong> WorldCat searches in traditional characters default to Taiwanese databases; simplified defaults to mainland Chinese databases. But diaspora materials — printed in traditional characters, produced in the US, about American communities — fall awkwardly between these poles. They are not Taiwanese; they are not PRC-aligned; but the catalog infrastructure assumes one axis: traditional/Taiwan or simplified/mainland.</p>
+
+<p><strong>3. The authority record problem.</strong> NACO (Name Authority Cooperative) and LCNAF (LC Name Authority File) follow LC conventions for Chinese names, which prioritize Pinyin Mandarin forms. An author who published under a Cantonese romanization of their name in 1920s San Francisco may appear in the catalog under a Mandarin rendering they never used, disconnecting the record from the community's self-documentation.</p>
+
+<p><strong>4. The subject heading problem.</strong> LCSH (Library of Congress Subject Headings) reflects the historical biases of Western knowledge organization. "Chinese Americans" as a subject heading was not established until 1976; earlier records may be filed under headings that would not be recognizable to the communities described. "Overseas Chinese" flattens enormous heterogeneity of language, politics, class, and region.</p>
+
+<div class="callout">
+  "Chinese Library Classification (CLC) is noted but not standard in US MARC systems." And CEAL workshops note a persistent "lack of expertise" in rare and specialized CJK materials — with dialect materials and diaspora community archives effectively outside the scope of existing training frameworks.
+  <cite>— CEAL / Library of Congress, CJK cataloging documentation</cite>
+</div>
+
+<p>The result: a vast archive of Chinese diasporic cultural production that is technically cataloged but functionally undiscoverable — misfiled under the wrong language identity, searchable only through a phonology you may not speak, and grouped with materials from a political context (mainland China, Taiwan) that may be antithetical to the community that produced them.</p>
+
+<!-- SECTION 5 -->
+<h2>V. Theoretical Anchors</h2>
+
+<p><strong>Cultural memory (Assmann):</strong> Jan and Aleida Assmann's distinction between <em>communicative memory</em> (living, generational, oral) and <em>cultural memory</em> (institutionally preserved, textual, codified) maps directly onto the script divide. Traditional characters, as used in diaspora communities, occupy a liminal space — they are both daily communicative practice and a form of cultural memory, a link to a pre-1956 world that the mainland has officially superseded.</p>
+
+<p><strong>Archive and counter-archive:</strong> Derrida's <em>Archive Fever</em> argues that the archive is always a site of power — what is preserved, how it is organized, who controls access. Community newspapers in traditional characters are counter-archival objects: they preserve a version of Chinese cultural life that the official archive (PRC-aligned databases, Mandarin-normalized catalogs) does not recognize as central.</p>
+
+<p><strong>Critical cataloging:</strong> The growing field of critical librarianship (Drabinski, Berman, Olson) examines how cataloging systems encode the epistemic frameworks of their designers. For Chinese diaspora materials, the dominant framework is doubly alienating: Western bibliographic infrastructure (MARC, AACR2, LCSH) layered over Mandarin-Pinyin romanization priorities, leaving Cantonese, Hokkien, Hakka, and Taishanese voices doubly marginal.</p>
+
+<!-- SOURCES -->
+<h2>Sources &amp; Further Reading</h2>
+
+<ul class="source-list">
+  <li>Wikipedia, "Simplified Chinese characters" — political timeline, methods, diaspora overview</li>
+  <li>Wikipedia, "Second round of simplified Chinese characters" — 1977 proposal and 1986 rescission</li>
+  <li>Library of Congress, CJK Cataloging Introduction: <a href="https://www.loc.gov/catdir/cpso/CJKIntro.html">loc.gov/catdir/cpso/CJKIntro.html</a></li>
+  <li>Columbia University Starr East Asian Library research guides: <a href="https://library.columbia.edu/libraries/eastasian/chinese/locating_materials.html">library.columbia.edu</a></li>
+  <li>Council on East Asian Libraries (CEAL), Technical Processing resources: <a href="https://www.eastasianlib.org">eastasianlib.org</a></li>
+  <li>CEAL AACR2 Workbook Revision (1996–2001) — BYU Scholars Archive</li>
+  <li>Asia Society Education: "Radicals Reveal Order in Chinese Characters" — <a href="https://asiasociety.org/education/radicals-reveal-order-chinese-characters">asiasociety.org</a></li>
+  <li>Simon Fraser University Digital Collections: <em>Chinatown News</em> (1953–1966): <a href="https://digital.lib.sfu.ca/newspapers/chinatown-news">digital.lib.sfu.ca</a></li>
+  <li>University of Toronto East Asian Library: Chinese Newspaper collections: <a href="https://guides.library.utoronto.ca/chinaresources/ChineseNewspapers">guides.library.utoronto.ca</a></li>
+  <li>UC Davis Library, overseas Chinese newspapers (UDNDATA): <a href="https://guides.library.ucdavis.edu/newspapers/foreign-newspapers">guides.library.ucdavis.edu</a></li>
+  <li>Assmann, Jan. <em>Cultural Memory and Early Civilization.</em> Cambridge UP, 2011.</li>
+  <li>Derrida, Jacques. <em>Archive Fever.</em> University of Chicago Press, 1996.</li>
+  <li>Drabinski, Emily. "Queering the Catalog: Queer Theory and the Politics of Correction." <em>The Library Quarterly</em> 83.2 (2013).</li>
+</ul>
+
+<footer>
+  Research compiled March 2026 · Petrarch for Cen's project · clawd workspace
+</footer>
+
+</body>
+</html>
